@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno | Ingeniero Informático</title>
+    
+    <meta name="description" content="Portafolio de Bruno | Ingeniero Informático.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bruno | Ingeniero Informático">
+    <meta property="og:description" content="Desarrollador Full Stack y Analista de Datos.">
+    <meta property="og:image" content="https://jinbe03.github.io/preview-image.jpg"> <meta property="og:url" content="https://jinbe03.github.io/">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Courier+New&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="modal-backdrop" onclick="closeAllModals()"></div>
+    <div id="star-container"></div>
+
+    <div class="main-container">
+        
+        <nav class="glass-nav">
+            <div class="logo">&lt;Bruno /&gt;</div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'inicio')" data-i18n="nav_home">Inicio</button>
+                <button class="tab-btn" onclick="openTab(event, 'proyectos')" data-i18n="nav_projects">Proyectos</button>
+                <button class="tab-btn" onclick="openTab(event, 'stack')" data-i18n="nav_stack">Stack</button>
+                <button class="tab-btn" onclick="openTab(event, 'cv')" data-i18n="nav_cv">CV & Certs</button> 
+                <button class="tab-btn" onclick="openTab(event, 'contacto')" data-i18n="nav_contact">Contacto</button>
+                
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">
+                    <i class="fa-solid fa-globe"></i> <span>EN</span>
+                </button>
+            </div>
+        </nav>
+
+        <div id="inicio" class="tab-content active-content">
+            <div class="glass-card hero-card">
+                <div class="profile-frame">
+                    <img src="foto-bruno.jpg" alt="Foto de Bruno" class="profile-img">
+                </div>
+                
+                <h1 data-i18n="hero_title">¡Hola, soy Bruno!</h1>
+                
+                <p data-i18n="hero_desc" style="font-size: 1.1rem; max-width: 600px; margin-bottom: 20px;">
+                    Veo la vida como un sistema de desafíos esperando la solución correcta. No me conformo con que el código funcione; busco siempre esa respuesta <strong>elegante</strong> y eficiente donde la lógica pura se encuentra con la creatividad.
+                </p>
+                
+                <h2 class="tagline">
+                    <span id="typewriter-text" class="typewriter-cursor"></span>
+                </h2>
+                
+                <button class="btn-secondary" onclick="openModal('modal-bio')" data-i18n="btn_about">Saber más sobre mí</button>
+                <div class="cta-group">
+                    <button class="btn-primary" onclick="triggerTab('proyectos')" data-i18n="btn_projects">Ver mis Proyectos</button>
+                </div>
+                <div class="card-footer" data-i18n="footer_copy">
+                    © 2025 Bruno. Diseño original y propio. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+
+        <div id="proyectos" class="tab-content">
+            <div class="glass-card">
+                <h3 data-i18n="proj_title">Portafolio Académico y Personal</h3>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <div class="project-header"><i class="fa-solid fa-car icon-big"></i><h4 data-i18n="p1_title">Gestión CarWash</h4></div>
+                        <p data-i18n="p1_desc">Automatización grupal de agenda y clientes.</p>
+                        <div class="tags"><span data-i18n="tag_fullstack">Full Stack</span><span data-i18n="tag_team">Trabajo en Equipo</span></div>
+                        <div style="margin-top: 15px;"><button class="btn-secondary" onclick="openModal('modal-carwash')" data-i18n="btn_more">Saber más</button></div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header"><i class="fa-solid fa-chart-line icon-big"></i><h4 data-i18n="p2_title">Tax & Financial Ops</h4></div>
+                        <p data-i18n="p2_desc">Sistema colaborativo para gestión tributaria.</p>
+                        <div class="tags"><span>Data Mgmt</span><span>Finanzas</span></div>
+                        <div style="margin-top: 15px;"><button class="btn-secondary" onclick="openModal('modal-finanzas')" data-i18n="btn_more">Saber más</button></div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header"><i class="fa-solid fa-mobile-screen icon-big"></i><h4 data-i18n="p3_title">Life Harmony (App)</h4></div>
+                        <p data-i18n="p3_desc">App móvil con IA para control calórico.</p>
+                        <div class="tags"><span>Dart</span><span>Mobile</span><span>IA</span></div>
+                        <div style="margin-top: 15px;"><button class="btn-secondary" onclick="openModal('modal-nutrifit')" data-i18n="btn_more">Saber más</button></div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header"><i class="fa-solid fa-book-open icon-big"></i><h4 data-i18n="p4_title">Mangacap</h4></div>
+                        <p data-i18n="p4_desc">Plataforma web para lectura legal de manga.</p>
+                        <div class="tags"><span data-i18n="tag_fullstack">Full Stack</span><span>UX/UI</span></div>
+                        <div style="margin-top: 15px;"><button class="btn-secondary" onclick="openModal('modal-manga')" data-i18n="btn_more">Saber más</button></div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header"><i class="fa-solid fa-computer icon-big"></i><h4 data-i18n="p5_title">TodoSolo PC</h4></div>
+                        <p data-i18n="p5_desc">Comparador de hardware con redirección inteligente.</p>
+                        <div class="tags"><span>Python</span><span>Backend</span></div>
+                        <div style="margin-top: 15px;"><button class="btn-secondary" onclick="openModal('modal-pc')" data-i18n="btn_more">Saber más</button></div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header"><i class="fa-solid fa-gamepad icon-big"></i><h4 data-i18n="p6_title">Pixel Brawler</h4></div>
+                        <p data-i18n="p6_desc">Videojuego Beat 'em up estilo Pixel Art.</p>
+                        <div class="tags"><span>Game Dev</span><span data-i18n="tag_solo">Autoría Propia</span></div>
+                        <div style="margin-top: 15px;"><button class="btn-secondary" onclick="openModal('modal-game')" data-i18n="btn_more">Saber más</button></div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <a href="https://github.com/Jinbe03/Projects" target="_blank" class="btn-primary"><i class="fa-brands fa-github"></i> <span data-i18n="btn_repo">Ver repositorio completo</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="stack" class="tab-content">
+            <div class="glass-card">
+                <h3 data-i18n="stack_title">Habilidades Técnicas</h3>
+                <div class="skills-section">
+                    <div class="progress-item"><div class="progress-info"><span data-i18n="skill_soft">Desarrollo de Software</span><span>100%</span></div><div class="progress-bg"><div class="progress-fill" style="width: 100%;"></div></div></div>
+                    <div class="progress-item"><div class="progress-info"><span data-i18n="skill_full">Desarrollo Full Stack (Web & Python)</span><span>90%</span></div><div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div></div>
+                    <div class="progress-item"><div class="progress-info"><span data-i18n="skill_data">Análisis de Datos (Excel, Power BI)</span><span>85%</span></div><div class="progress-bg"><div class="progress-fill" style="width: 85%;"></div></div></div>
+                    <div class="progress-item"><div class="progress-info"><span data-i18n="skill_db">Bases de Datos & Cloud</span><span>70%</span></div><div class="progress-bg"><div class="progress-fill" style="width: 70%;"></div></div></div>
+                    <div class="progress-item"><div class="progress-info"><span data-i18n="skill_mobile">Desarrollo Móvil (Dart)</span><span>60%</span></div><div class="progress-bg"><div class="progress-fill" style="width: 60%;"></div></div></div>
+                </div>
+                <div class="dual-skills">
+                    <div class="skill-column">
+                        <h4 data-i18n="tech_skills">Tecnologías</h4>
+                        <div class="tags-cloud">
+                            <span class="tag-hard" data-i18n="ts_cloud">Computación en la Nube</span>
+                            <span class="tag-hard" data-i18n="ts_security">Seguridad de la Información</span>
+                            <span class="tag-hard" data-i18n="ts_auto">Automatización</span>
+                            <span class="tag-hard">Backend Logic</span>
+                            <span class="tag-hard">APIs RESTful</span>
+                            <span class="tag-hard">Oracle DB</span>
+                            <span class="tag-hard">Git & GitHub</span>
+                        </div>
+                    </div>
+                    <div class="skill-column">
+                        <h4 data-i18n="soft_skills">Aptitudes de Ingeniero</h4>
+                        <div class="tags-cloud">
+                            <span class="tag-soft" data-i18n="ss_solve">Resolución de Problemas</span>
+                            <span class="tag-soft" data-i18n="ss_team">Trabajo en Equipo</span>
+                            <span class="tag-soft" data-i18n="ss_critical">Pensamiento Crítico</span>
+                            <span class="tag-soft" data-i18n="ss_design">Diseño de Sistemas</span>
+                            <span class="tag-soft" data-i18n="ss_agile">Metodologías Ágiles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cv" class="tab-content">
+            <div class="glass-card">
+                <h3 data-i18n="cv_title">Trayectoria & Certificaciones</h3>
+                
+                <button class="btn-primary" onclick="previewCV()" style="margin-bottom: 40px; transform: scale(1.1);">
+                    <i class="fa-solid fa-eye"></i> <span data-i18n="btn_cv">Ver CV (Español)</span>
+                </button>
+
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023 - 2026 (Esperado)</div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="edu_title">Ingeniería en Informática</h4>
+                            <p data-i18n="edu_desc">INACAP. Formación integral en desarrollo de software, gestión de proyectos y arquitectura de sistemas.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024 - 2025</div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="exp_title">Proyectos de Desarrollo</h4>
+                            <p data-i18n="exp_desc">Creación de soluciones Full Stack (CarWash, PC Compare) y aplicaciones móviles (NutriFit). Digitalización de procesos financieros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div style="text-align: left; margin-bottom: 30px;">
+                    <h4><i class="fa-solid fa-certificate" style="color: var(--primary);"></i> <span data-i18n="cert_title">Certificaciones Oficiales</span></h4>
+                    <p style="font-size: 0.8rem; color: #aaa; margin-bottom: 15px;" data-i18n="cert_subtitle">(Haz clic para validar la credencial)</p>
+                    
+                    <div class="tags-cloud">
+                        <button class="tag-hard link-cert" onclick="openDoc('certificados/Full_Stack.pdf', 'Desarrollador Full Stack')">
+                            <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cert_full">Desarrollador Full Stack</span>
+                        </button>
+
+                        <button class="tag-hard link-cert" onclick="openDoc('certificados/Arquitectura_Cloud.pdf', 'Arquitectura Cloud')">
+                            <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cert_cloud">Arquitectura Cloud</span>
+                        </button>
+
+                        <button class="tag-hard link-cert" onclick="openDoc('certificados/Diseno_Agil.pdf', 'Diseño Ágil de Sistemas')">
+                            <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cert_agile">Diseño Ágil de Sistemas</span>
+                        </button>
+                        
+                        <button class="tag-hard link-cert" onclick="openDoc('certificados/Gestion_BD.pdf', 'Diseño y Gestión de BD')">
+                            <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cert_db">Diseño y Gestión de BD</span>
+                        </button>
+
+                        <button class="tag-hard link-cert" onclick="openDoc('certificados/Desarrollo_Apps.pdf', 'Desarrollo de Apps Básicas')">
+                            <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cert_apps">Desarrollo de Apps Básicas</span>
+                        </button>
+
+                        <button class="tag-hard link-cert" onclick="openDoc('certificados/Soporte.pdf', 'Soporte Computacional')">
+                            <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cert_support">Soporte Computacional</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contacto" class="tab-content">
+            <div class="glass-card contact-card">
+                <h3 data-i18n="contact_title">Base de Operaciones</h3>
+                <p style="margin-bottom: 20px;" data-i18n="contact_ask">¿Tienes una misión o proyecto?</p>
+                <p style="font-weight: 600; color: var(--primary); margin-top: 0; margin-bottom: 30px;" data-i18n="contact_cta">Conectemos frecuencia desde Chile para el mundo.</p>
+                <a href="mailto:brunomaldonado04@gmail.com" class="btn-primary">
+                    <i class="fa-solid fa-envelope"></i> <span data-i18n="btn_email">Enviar Correo</span>
+                </a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/bmaldonado04/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Jinbe03/Projects" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <p class="email-footer">brunomaldonado04@gmail.com</p>
+                <div class="card-footer" data-i18n="footer_copy">
+                    © 2025 Bruno. Diseño original y propio. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-bio" class="modal-overlay"><div class="glass-card modal-content"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2 data-i18n="bio_title"></h2><div class="modal-scroll-area"><p data-i18n="bio_p1"></p><p data-i18n="bio_p2"></p><p data-i18n="bio_p3"></p></div></div></div>
+    <div id="modal-carwash" class="modal-overlay"><div class="glass-card modal-content"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2>CarWash Management</h2><div class="modal-scroll-area"><p data-i18n="cw_p1"></p><p data-i18n="cw_p2"></p><p data-i18n="cw_p3"></p></div></div></div>
+    <div id="modal-finanzas" class="modal-overlay"><div class="glass-card modal-content"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2 data-i18n="fin_title"></h2><div class="modal-scroll-area"><p data-i18n="fin_p1"></p><p data-i18n="fin_p2"></p><p data-i18n="fin_p3"></p></div></div></div>
+    <div id="modal-nutrifit" class="modal-overlay"><div class="glass-card modal-content"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2>Life Harmony</h2><div class="modal-scroll-area"><p data-i18n="nutri_p1"></p><p data-i18n="nutri_p2"></p><p data-i18n="nutri_p3"></p></div></div></div>
+    <div id="modal-manga" class="modal-overlay"><div class="glass-card modal-content"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2>Mangacap</h2><div class="modal-scroll-area"><p data-i18n="manga_p1"></p><p data-i18n="manga_p2"></p></div></div></div>
+    <div id="modal-pc" class="modal-overlay"><div class="glass-card modal-content"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2>TodoSolo PC</h2><div class="modal-scroll-area"><p data-i18n="pc_p1"></p><p data-i18n="pc_p2"></p></div></div></div>
+    <div id="modal-game" class="modal-overlay"><div class="glass-card modal-content"><span class="close-btn" onclick="closeAllModals()">&times;</span><h2 data-i18n="game_title"></h2><div class="modal-scroll-area"><p data-i18n="game_p1"></p><p data-i18n="game_p2"></p><p data-i18n="game_p3"></p></div></div></div>
+
+    <div id="modal-viewer" class="modal-overlay">
+            <div class="glass-card modal-content pdf-modal">
+                <span class="close-btn" onclick="closeAllModals()">&times;</span>
+                <h2 id="viewer-title">Documento</h2>
+                
+                <div class="pdf-container">
+                    <iframe id="doc-frame" src="" frameborder="0" style="width:100%; height:100%;"></iframe>
+                </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a id="download-fallback" href="#" download class="btn-secondary" style="font-size: 0.8rem;">
+                        <i class="fa-solid fa-download"></i> <span data-i18n="btn_download">Descargar Original</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
