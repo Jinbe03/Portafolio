@@ -436,12 +436,14 @@ function createShootingStar() {
         }
     }, duration * 1000);
 }
-// === VISUALIZADOR DE DOCUMENTOS (PDF) ===
-// === VISUALIZADOR (Versión compatible con PDF directo) ===
-
-// === VISUALIZADOR DE DOCUMENTOS (PDF) ===
 
 function openDoc(url, title) { 
+    
+    if (window.innerWidth <= 768) {
+        
+        window.open(url, '_blank'); 
+        return;
+    }
     const modal = document.getElementById('modal-viewer');
     const iframe = document.getElementById('doc-frame');
     const titleEl = document.getElementById('viewer-title');
