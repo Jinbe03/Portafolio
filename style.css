@@ -432,3 +432,22 @@ button.link-cert:hover {
     display: block;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
+
+
+    .modal-content {
+        width: 95% !important;
+        margin: 10% auto;     
+        max-height: 80vh;     
+        padding: 15px; 
+    }
+
+    /* Ajuste especial para/* --- RESPONSIVE MODAL FIX --- */
+@media (max-width: 768px) { el visor de PDF */
+    .pdf-modal {
+        height: 85vh;
+    }
+    
+    .pdf-container iframe {
+        min-height: 400px;
+    }
+}
