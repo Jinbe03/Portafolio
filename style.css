@@ -442,7 +442,7 @@ button.link-cert:hover {
     }
 
     /* Ajuste especial para/* --- RESPONSIVE MODAL FIX --- */
-@media (max-width: 768px) { el visor de PDF */
+@media (max-width: 768px) {
     .pdf-modal {
         height: 85vh;
     }
@@ -451,3 +451,4 @@ button.link-cert:hover {
         min-height: 400px;
     }
 }
+
