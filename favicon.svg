@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ff9e6d" flood-opacity="0.7"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="0.8" flood-color="#ff9e6d" flood-opacity="1"/>
+    </filter>
+  </defs>
+
+  <path d="M22 9.5C17 9.5 12 13.5 12 18.5C12 23.5 16 27.5 21 27.5C14 27.5 9 21.5 9 14.5C9 7.5 15 3.5 22 9.5Z" 
+        fill="#ff9e6d" 
+        filter="url(#neon-glow)" 
+        transform="translate(1, -1)" />
+</svg>
